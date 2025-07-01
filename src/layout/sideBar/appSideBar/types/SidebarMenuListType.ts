@@ -8,7 +8,7 @@ export type SidebarMenuListProps = {
   subMenuHeight: Record<string, number>;
   subMenuRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
   isActive: (path: string) => boolean;
-  handleSubmenuToggle: (index: number, type: "menu" | "others") => void;
+  handleSubmenuToggle?: (index: number, type: "menu" | "others") => void;
 };
 
 
@@ -17,7 +17,7 @@ export type SidebarMenuProps ={navItems: NavItem[];
     subMenuHeight:Record<string, number>;
     subMenuRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
     isActive:(path: string) => boolean;
-    handleSubmenuToggle: (index: number, type: "menu" | "others") => void;
+    handleSubmenuToggle?: (index: number, type: "menu" | "others") => void;
 }
 
 export type SidebarSectionProps = {title:string}
