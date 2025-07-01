@@ -1,5 +1,5 @@
 import { HorizontaLDots } from "@/icons";
-import { useSidebarStore } from "@/layout/sideBar/hooks/UseSidebarStore";
+import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 import RenderMenuItems from "./RenderMenuItems";
 import { SidebarMenuProps, SidebarSectionProps } from "../types";
 

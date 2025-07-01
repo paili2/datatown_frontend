@@ -1,5 +1,5 @@
 // import { useSidebar } from "@/context/SidebarContext";
-import { useSidebarStore } from "@/layout/sideBar/hooks/UseSidebarStore";
+import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 import React from "react";
 
 const Backdrop: React.FC = () => {

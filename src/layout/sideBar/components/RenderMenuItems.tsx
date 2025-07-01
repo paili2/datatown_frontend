@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import MenuItemWithSubmenu from "./MenuItemWithSubmenu";
 import { SidebarMenuProps } from "../types";
-import { useSidebarStore } from "../hooks/UseSidebarStore";
+import { useSidebarStore } from "../hooks/useSidebarStore";
 
 
 const RenderMenuItems = ({navItems,
