@@ -1,8 +1,10 @@
 import { menuItems, NavItem } from "../data/navData";
 
+export type MenuType = "menu" | "others";
+
 export type SidebarMenuListProps = {
   navItems: NavItem[];
-  menuType: "menu" | "others";
+  menuType: MenuType;
   subMenuHeight: Record<string, number>;
   subMenuRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
   isActive: (path: string) => boolean;
@@ -11,7 +13,7 @@ export type SidebarMenuListProps = {
 
 
 export type SidebarMenuProps ={navItems: NavItem[];
-    menuType: "menu" | "others";
+    menuType: MenuType;
     subMenuHeight:Record<string, number>;
     subMenuRefs: React.RefObject<Record<string, HTMLDivElement | null>>;
     isActive:(path: string) => boolean;
@@ -20,17 +22,16 @@ export type SidebarMenuProps ={navItems: NavItem[];
 
 export type SidebarSectionProps = {title:string}
 
-
 export type sidebarConfigType = {
   title: string;
   items: typeof menuItems;
-  type: "menu" | "others";
+  type: MenuType;
 }[]  
 
 
 export type MenuItemWithSubmenuProps = {
   nav: NavItem;                  
   index: number;                   
-  menuType: "menu" | "others";      
+  menuType: MenuType
 };
 

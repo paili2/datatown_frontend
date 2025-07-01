@@ -1,10 +1,7 @@
-
 import Link from "next/link";
-
 import MenuItemWithSubmenu from "./MenuItemWithSubmenu";
 import { SidebarMenuProps } from "../types";
-import { useSidebarStore } from "../hooks/useSidebarStore";
-
+import { useSidebarStore } from "../hooks/UseSidebarStore";
 
 
 const RenderMenuItems = ({navItems,

@@ -1,7 +1,7 @@
-
 import { ChevronDownIcon } from "@/icons";
-import { MenuItemWithSubmenuProps } from "../types";
-import { useSidebarStore } from "../hooks/useSidebarStore";
+import { MenuItemWithSubmenuProps, MenuType } from "../types";
+import { useSidebarStore } from "../hooks/UseSidebarStore";
+
 
 
 const MenuItemWithSubmenu:React.FC<MenuItemWithSubmenuProps> = ({ nav, index, menuType }) => {

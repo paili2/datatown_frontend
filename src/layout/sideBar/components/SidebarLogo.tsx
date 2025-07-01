@@ -1,7 +1,7 @@
-
 import Image from "next/image";
 import Link from "next/link";
-import { useSidebarStore } from "../hooks/useSidebarStore";
+import { useSidebarStore } from "../hooks/UseSidebarStore";
+
 
 const SidebarLogo = () => {
     const { isExpanded, isMobileOpen, isHovered } = useSidebarStore();
