@@ -1,18 +1,18 @@
 "use client";
 
-// import { useSidebar } from "@/context/SidebarContext";
-import { useSidebarStore } from "@/layout/sideBar/context/UseSidebarStore";
+
+
 import AppHeader from "@/layout/AppHeader";
 import AppSidebar from "@/layout/sideBar/AppSidebar";
 import Backdrop from "@/layout/Backdrop";
 import React from "react";
+import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // const { isExpanded, isHovered, isMobileOpen } = useSidebar();
   const { isExpanded, isMobileOpen, isHovered } = useSidebarStore();
 
   // Dynamic class for main content margin based on sidebar state
