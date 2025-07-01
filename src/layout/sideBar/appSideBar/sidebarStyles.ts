@@ -1,4 +1,4 @@
-import { useSidebarStore } from "@/layout/sideBar/context/UseSidebarStore"
+import { useSidebarStore } from "@/layout/sideBar/hooks/UseSidebarStore"
 
 export function useSidebarClasses() {
  const {isMobileOpen,isExpanded,isHovered} = useSidebarStore();

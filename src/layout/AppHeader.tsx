@@ -2,7 +2,7 @@
 import { ThemeToggleButton } from "@/components/common/ThemeToggleButton";
 import NotificationDropdown from "@/components/header/NotificationDropdown";
 import UserDropdown from "@/components/header/UserDropdown";
-import { useSidebarStore } from "@/layout/sideBar/context/UseSidebarStore";
+import { useSidebarStore } from "@/layout/sideBar/hooks/UseSidebarStore";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState ,useEffect,useRef} from "react";

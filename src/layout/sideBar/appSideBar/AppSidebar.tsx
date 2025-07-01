@@ -1,12 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState,useCallback } from "react";
 import { usePathname } from "next/navigation";
-import SidebarSection from "./components/SidebarSection";
-import { useSidebarStore } from "@/layout/sideBar/context/UseSidebarStore";
-import { menuItems, othersItems, sidebarConfig } from "./data/navData";
-import SidebarLogo from "./components/SidebarLogo";
-import SidebarWidgetWrapper from "./components/SidebarWidgetWrapper";
+
 import { useSidebarClasses } from "./sidebarStyles";
+import { useSidebarStore } from "../hooks/UseSidebarStore";
+import SidebarLogo from "../components/SidebarLogo";
+import SidebarSection from "../components/SidebarSection";
+import SidebarWidgetWrapper from "../components/SidebarWidgetWrapper";
+import { menuItems, othersItems, sidebarConfig } from "../data/navData";
 
 
 const AppSidebar: React.FC = () => {
