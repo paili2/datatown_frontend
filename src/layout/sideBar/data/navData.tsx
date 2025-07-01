@@ -1,15 +1,6 @@
-import {
-  BoxCubeIcon,
-  CalenderIcon,
-  GridIcon,
-  ListIcon,
-  PageIcon,
-  PieChartIcon,
-  PlugInIcon,
-  TableIcon,
-  UserCircleIcon,
-} from "../../../../icons/index";
-import { sidebarConfigType } from "../types/SidebarMenuListType";
+import { BoxCubeIcon, CalenderIcon, GridIcon, ListIcon, PageIcon, PieChartIcon, PlugInIcon, TableIcon, UserCircleIcon } from "@/icons";
+import { sidebarConfigType } from "../appSideBar/types/SidebarMenuListType";
+
 
 
 export type NavItem = {
