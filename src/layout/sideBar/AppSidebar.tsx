@@ -2,12 +2,12 @@
 import React, { useEffect, useRef, useState,useCallback } from "react";
 import { usePathname } from "next/navigation";
 
-import { useSidebarClasses } from "./sidebarStyles";
-import { useSidebarStore } from "../hooks/UseSidebarStore";
-import SidebarLogo from "../components/SidebarLogo";
-import SidebarSection from "../components/SidebarSection";
-import SidebarWidgetWrapper from "../components/SidebarWidgetWrapper";
-import { menuItems, othersItems, sidebarConfig } from "../data/navData";
+import { useSidebarClasses } from "./styles/sidebarStyles";
+import { useSidebarStore } from "./hooks/UseSidebarStore";
+import SidebarLogo from "./components/SidebarLogo";
+import SidebarSection from "./components/SidebarSection";
+import SidebarWidgetWrapper from "./components/SidebarWidgetWrapper";
+import { menuItems, othersItems, sidebarConfig } from "./data/navData";
 
 
 const AppSidebar: React.FC = () => {

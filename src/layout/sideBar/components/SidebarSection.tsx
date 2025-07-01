@@ -1,7 +1,7 @@
 import { HorizontaLDots } from "@/icons";
 import { useSidebarStore } from "@/layout/sideBar/hooks/UseSidebarStore";
 import RenderMenuItems from "./RenderMenuItems";
-import { SidebarMenuProps, SidebarSectionProps } from "../appSideBar/types/SidebarMenuListType";
+import { SidebarMenuProps, SidebarSectionProps } from "../types";
 
 
 const SidebarSection = ({navItems,menuType,title,subMenuRefs ,subMenuHeight, isActive, handleSubmenuToggle}:SidebarMenuProps&SidebarSectionProps) => {

@@ -1,4 +1,4 @@
-import { menuItems, NavItem } from "../../data/navData";
+import { menuItems, NavItem } from "../data/navData";
 
 export type SidebarMenuListProps = {
   navItems: NavItem[];

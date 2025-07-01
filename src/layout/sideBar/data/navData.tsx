@@ -1,5 +1,5 @@
 import { BoxCubeIcon, CalenderIcon, GridIcon, ListIcon, PageIcon, PieChartIcon, PlugInIcon, TableIcon, UserCircleIcon } from "@/icons";
-import { sidebarConfigType } from "../appSideBar/types/SidebarMenuListType";
+import { sidebarConfigType } from "../types";
 
 
 

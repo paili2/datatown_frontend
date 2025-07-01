@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 import MenuItemWithSubmenu from "./MenuItemWithSubmenu";
-import { SidebarMenuProps } from "../appSideBar/types/SidebarMenuListType";
+import { SidebarMenuProps } from "../types";
 import { useSidebarStore } from "../hooks/UseSidebarStore";
 
 
