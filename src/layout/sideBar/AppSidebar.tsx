@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { useSidebarClasses } from "./styles/sidebarStyles";
 import { useSidebarStore } from "./hooks/useSidebarStore";
 import SidebarLogo from "./components/SidebarLogo";
-import SidebarSection from "./components/SidebarSection";
 import SidebarWidgetWrapper from "./components/SidebarWidgetWrapper";
 import { menuItems, othersItems, sidebarConfig } from "./data/navData";
+import Section from "./components/Section";
 
 
 
@@ -68,7 +68,7 @@ const AppSidebar: React.FC = () => {
         <nav className="mb-6">
           <div className="flex flex-col gap-4">
             {sidebarConfig.map((config ,i)=>
-                <SidebarSection key={i} navItems={config.items} menuType={config.type} title={config.type} subMenuRefs={subMenuRefs}  subMenuHeight={subMenuHeight} isActive={isActive} handleSubmenuToggle={toggleSubmenu}  ></SidebarSection>
+                <Section key={i} navItems={config.items} menuType={config.type} title={config.type} subMenuRefs={subMenuRefs}  subMenuHeight={subMenuHeight} isActive={isActive} handleSubmenuToggle={toggleSubmenu}  ></Section>
             )}
           </div>
         </nav>
