@@ -2,12 +2,15 @@
 import React, { useEffect, useRef, useState,useCallback } from "react";
 import { usePathname } from "next/navigation";
 
-import { useSidebarClasses } from "./styles/sidebarStyles";
-import { useSidebarStore } from "./hooks/UseSidebarStore";
+import { useSidebarClasses } from "./styles/styles";
+
 import SidebarLogo from "./components/SidebarLogo";
-import SidebarSection from "./components/SidebarSection";
 import SidebarWidgetWrapper from "./components/SidebarWidgetWrapper";
 import { menuItems, othersItems, sidebarConfig } from "./data/navData";
+import Section from "./components/Section";
+import { useSidebarStore } from "./hooks/useSidebarStore";
+
+
 
 
 const AppSidebar: React.FC = () => {
@@ -67,7 +70,7 @@ const AppSidebar: React.FC = () => {
         <nav className="mb-6">
           <div className="flex flex-col gap-4">
             {sidebarConfig.map((config ,i)=>
-                <SidebarSection key={i} navItems={config.items} menuType={config.type} title={config.type} subMenuRefs={subMenuRefs}  subMenuHeight={subMenuHeight} isActive={isActive} handleSubmenuToggle={toggleSubmenu}  ></SidebarSection>
+                <Section key={i} navItems={config.items} menuType={config.type} title={config.type} subMenuRefs={subMenuRefs}  subMenuHeight={subMenuHeight} isActive={isActive} handleSubmenuToggle={toggleSubmenu}  ></Section>
             )}
           </div>
         </nav>
