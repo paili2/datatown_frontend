@@ -1,7 +1,5 @@
 "use client";
 
-
-
 import AppHeader from "@/layout/AppHeader";
 import AppSidebar from "@/layout/sideBar/AppSidebar";
 import Backdrop from "@/layout/Backdrop";
