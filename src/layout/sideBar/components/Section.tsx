@@ -4,9 +4,6 @@ import { SidebarMenuProps, SidebarSectionProps } from "../types";
 import { isSidebarOpen } from "../utils/sidebarUtils";
 import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 
-
-
-
 const Section = ({navItems,menuType,title,subMenuRefs ,subMenuHeight, isActive, handleSubmenuToggle}:SidebarMenuProps&SidebarSectionProps) => {
     const {isExpanded, isHovered, isMobileOpen} = useSidebarStore();
     const showMenu = isSidebarOpen(isExpanded, isHovered, isMobileOpen);
