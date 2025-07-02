@@ -11,3 +11,12 @@ export const isSubmenuOpen = (
 ): boolean => {
   return openSubmenu?.type === menuType && openSubmenu?.index === index;
 };
+
+export function getSidebarJustifyClass(
+  isExpanded: boolean,
+  isHovered: boolean
+): string {
+  return !isExpanded && !isHovered
+    ? "lg:justify-center"
+    : "justify-start";
+}
