@@ -1,17 +1,17 @@
 import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 import Image from "next/image";
 import Link from "next/link";
-import { isSidebarOpen } from "../utils/sidebarUtils";
+import { getSidebarJustifyClass, isSidebarOpen } from "../utils/sidebarUtils";
 
 
 const SidebarLogo = () => {
     const { isExpanded, isMobileOpen, isHovered } = useSidebarStore();
     const showMenu = isSidebarOpen(isExpanded, isHovered, isMobileOpen);
+    const justifyClass = getSidebarJustifyClass(isExpanded, isHovered);
+
 
     return <div
-        className={`py-8 flex  ${
-          !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
-        }`}
+        className={`py-8 flex  ${justifyClass}`}
       >
         <Link href="/">
           {showMenu ? (

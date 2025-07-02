@@ -1,12 +1,13 @@
 import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 import { ChevronDownIcon } from "@/icons";
 import { MenuItemWithSubmenuProps, MenuType } from "../types";
-import { isSidebarOpen, isSubmenuOpen  } from "../utils/sidebarUtils";
+import { getSidebarJustifyClass, isSidebarOpen, isSubmenuOpen  } from "../utils/sidebarUtils";
 
 const MenuItemWithSubmenu:React.FC<MenuItemWithSubmenuProps> = ({ nav, index, menuType }) => {
     const { isExpanded, isMobileOpen, isHovered, openSubmenu, toggleSubmenu } = useSidebarStore();
     const showMenu = isSidebarOpen (isExpanded, isHovered, isMobileOpen);
     const showChevronRotated = isSubmenuOpen(openSubmenu, menuType, index);
+    
 
     return   <button
               onClick={() => toggleSubmenu(index, menuType)}
@@ -15,7 +16,7 @@ const MenuItemWithSubmenu:React.FC<MenuItemWithSubmenuProps> = ({ nav, index, me
                   ? "menu-item-active"
                   : "menu-item-inactive"
               } cursor-pointer ${
-                !isExpanded && !isHovered
+                !isExpanded && !isHovered 
                   ? "lg:justify-center"
                   : "lg:justify-start"
               }`}
