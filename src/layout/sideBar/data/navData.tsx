@@ -1,5 +1,5 @@
 import { BoxCubeIcon, CalenderIcon, GridIcon, ListIcon, PageIcon, PieChartIcon, PlugInIcon, TableIcon, UserCircleIcon } from "@/icons";
-import { sidebarConfigType } from "../types";
+import { SidebarConfigList } from "../types";
 
 
 
@@ -78,7 +78,7 @@ export const othersItems: NavItem[] = [
   },
 ];
 
-export const sidebarConfig:sidebarConfigType =
+export const sidebarConfig:SidebarConfigList =
  [
   { title: "menu", items: menuItems, type: "menu" },
   { title: "others", items: othersItems, type: "others" },

@@ -67,9 +67,7 @@ const AppSidebar: React.FC = () => {
       <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
         <nav className="mb-6">
           <div className="flex flex-col gap-4">
-            {sidebarConfig.map((config ,i)=>
-                <Section key={i} navItems={config.items} menuType={config.type} title={config.type} subMenuRefs={subMenuRefs}  subMenuHeight={subMenuHeight} isActive={isActive} handleSubmenuToggle={toggleSubmenu}  ></Section>
-            )}
+            {sidebarConfig.map((config, i)=> ( <Section key={i} navItems={config.items} menuType={config.type} title={config.type} subMenuRefs={subMenuRefs}  subMenuHeight={subMenuHeight} isActive={isActive} handleSubmenuToggle={toggleSubmenu}  ></Section>))}
           </div>
         </nav>
      <SidebarWidgetWrapper/>

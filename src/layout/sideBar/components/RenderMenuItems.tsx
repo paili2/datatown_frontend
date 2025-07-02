@@ -1,11 +1,12 @@
 import Link from "next/link";
 import MenuItemWithSubmenu from "./MenuItemWithSubmenu";
-import { SidebarMenuProps } from "../types";
+import { SidebarMenuListProps } from "../types";
 import { useSidebarStore } from "../hooks/useSidebarStore";
 import { isSidebarOpen, isSubmenuOpen  } from "../utils/sidebarUtils";
+import MenuDropdownItem from "./MenuDropdownItem";
 
 const RenderMenuItems = ({navItems,
-    menuType, subMenuHeight, subMenuRefs, isActive}:SidebarMenuProps) => {
+    menuType, subMenuHeight, subMenuRefs, isActive}:SidebarMenuListProps) => {
     const { isExpanded, isMobileOpen, isHovered, openSubmenu } = useSidebarStore();
      const showMenu = isSidebarOpen (isExpanded, isHovered, isMobileOpen);
  
@@ -13,7 +14,6 @@ const RenderMenuItems = ({navItems,
     return  (
     <ul className="flex flex-col gap-4">
       {navItems.map((nav, index) => {
-
       const isOpen = isSubmenuOpen(openSubmenu, menuType, index);
       const height = isOpen
     ? `${subMenuHeight[`${menuType}-${index}`]}px`
@@ -56,43 +56,8 @@ const RenderMenuItems = ({navItems,
 
             >
               <ul className="mt-2 space-y-1 ml-9">
-                {nav.subItems.map((subItem) => (
-                  <li key={subItem.name}>
-                    <Link
-                      href={subItem.path}
-                      className={`menu-dropdown-item ${
-                        isActive(subItem.path)
-                          ? "menu-dropdown-item-active"
-                          : "menu-dropdown-item-inactive"
-                      }`}
-                    >
-                      {subItem.name}
-                      <span className="flex items-center gap-1 ml-auto">
-                        {subItem.new && (
-                          <span
-                            className={`ml-auto ${
-                              isActive(subItem.path)
-                                ? "menu-dropdown-badge-active"
-                                : "menu-dropdown-badge-inactive"
-                            } menu-dropdown-badge `}
-                          >
-                            new
-                          </span>
-                        )}
-                        {subItem.pro && (
-                          <span
-                            className={`ml-auto ${
-                              isActive(subItem.path)
-                                ? "menu-dropdown-badge-active"
-                                : "menu-dropdown-badge-inactive"
-                            } menu-dropdown-badge `}
-                          >
-                            pro
-                          </span>
-                        )}
-                      </span>
-                    </Link>
-                  </li>
+                {nav.subItems.map((sub) => (
+                 <MenuDropdownItem  key={sub.name} path={sub.path} name={sub.name} isActive={isActive} isNew={sub.new} isPro={sub.pro} />
                 ))}
               </ul>
             </div>

@@ -16,9 +16,7 @@ const MenuItemWithSubmenu:React.FC<MenuItemWithSubmenuProps> = ({ nav, index, me
                   ? "menu-item-active"
                   : "menu-item-inactive"
               } cursor-pointer ${
-                !isExpanded && !isHovered 
-                  ? "lg:justify-center"
-                  : "lg:justify-start"
+              isExpanded || isHovered ? "lg:justify-start" : "lg:justify-center"
               }`}
             >
               <span
@@ -36,9 +34,7 @@ const MenuItemWithSubmenu:React.FC<MenuItemWithSubmenuProps> = ({ nav, index, me
               )}
               {(showMenu) && (
                 <ChevronDownIcon
-                  className={`ml-auto w-5 h-5 transition-transform duration-200  ${showChevronRotated
-                      ? "rotate-180 text-brand-500"
-                      : ""
+                  className={`ml-auto w-5 h-5 transition-transform duration-200  ${showChevronRotated ? "rotate-180 text-brand-500" : ""
                   }`}
                 />
               )}
