@@ -1,6 +1,6 @@
+import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 import { ChevronDownIcon } from "@/icons";
 import { MenuItemWithSubmenuProps, MenuType } from "../types";
-import { useSidebarStore } from "../hooks/useSidebarStore";
 import { isSidebarOpen, isSubmenuOpen  } from "../utils/sidebarUtils";
 
 

@@ -1,4 +1,4 @@
-import { useSidebarStore } from "../hooks/useSidebarStore";
+import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore"
 
 
 export function useSidebarClasses() {

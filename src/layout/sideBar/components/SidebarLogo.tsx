@@ -1,6 +1,6 @@
+import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 import Image from "next/image";
 import Link from "next/link";
-import { useSidebarStore } from "../hooks/useSidebarStore";
 import { isSidebarOpen } from "../utils/sidebarUtils";
 
 

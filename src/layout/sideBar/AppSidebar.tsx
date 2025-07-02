@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState,useCallback } from "react";
 import { usePathname } from "next/navigation";
-
 import { useSidebarStore } from "./hooks/useSidebarStore";
 import SidebarLogo from "./components/SidebarLogo";
 import SidebarWidgetWrapper from "./components/SidebarWidgetWrapper";
 import { menuItems, othersItems, sidebarConfig } from "./data/navData";
 import Section from "./components/Section";
 import { useSidebarClasses } from "./styles/styles";
+
 
 
 

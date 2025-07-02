@@ -1,8 +1,9 @@
 import { HorizontaLDots } from "@/icons";
 import RenderMenuItems from "./RenderMenuItems";
 import { SidebarMenuProps, SidebarSectionProps } from "../types";
-import { useSidebarStore } from "../hooks/useSidebarStore";
 import { isSidebarOpen } from "../utils/sidebarUtils";
+import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
+
 
 
 
@@ -18,9 +19,8 @@ const Section = ({navItems,menuType,title,subMenuRefs ,subMenuHeight, isActive, 
                     : "justify-start"
                 }`}
               >
-                {showMenu ? (
-                  title
-                ) : (
+                {showMenu ?
+                  title: (
                   <HorizontaLDots />
                 )}
               </h2>

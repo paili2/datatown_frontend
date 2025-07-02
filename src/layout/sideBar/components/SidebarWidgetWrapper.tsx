@@ -1,6 +1,8 @@
-
-import { useSidebarStore } from "../hooks/useSidebarStore";
 import SidebarWidget from "../widgets/SidebarWidget";
+import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
+
+
+
 
 
 const SidebarWidgetWrapper = () => {
