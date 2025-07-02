@@ -1,11 +1,11 @@
-import PageBreadcrumb from "@/components/common/PageBreadCrumb";
-import DefaultModal from "@/components/example/ModalExample/DefaultModal";
-import FormInModal from "@/components/example/ModalExample/FormInModal";
-import FullScreenModal from "@/components/example/ModalExample/FullScreenModal";
-import ModalBasedAlerts from "@/components/example/ModalExample/ModalBasedAlerts";
-import VerticallyCenteredModal from "@/components/example/ModalExample/VerticallyCenteredModal";
+import PageBreadcrumb from "@/shared/ui/pagebreadcrumb/PageBreadCrumb";
 import { Metadata } from "next";
 import React from "react";
+import DefaultModal from "./DefaultModal";
+import VerticallyCenteredModal from "./VerticallyCenteredModal";
+import FormInModal from "./FormInModal";
+import FullScreenModal from "./FullScreenModal";
+import ModalBasedAlerts from "./ModalBasedAlerts";
 
 export const metadata: Metadata = {
   title: "Next.js Modals | TailAdmin - Next.js Dashboard Template",

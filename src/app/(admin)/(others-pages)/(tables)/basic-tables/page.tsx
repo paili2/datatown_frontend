@@ -1,6 +1,7 @@
-import ComponentCard from "@/components/common/ComponentCard";
-import PageBreadcrumb from "@/components/common/PageBreadCrumb";
-import BasicTableOne from "@/components/tables/BasicTableOne";
+
+import PageBreadcrumb from "@/shared/ui/pagebreadcrumb/PageBreadCrumb";
+import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
+import BasicTableOne from "@/widgets/tables/BasicTableOne";
 import { Metadata } from "next";
 import React from "react";
 
