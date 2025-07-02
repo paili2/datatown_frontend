@@ -1,15 +1,21 @@
 import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 import { ChevronDownIcon } from "@/icons";
-import { MenuItemWithSubmenuProps } from "../types";
+import { MenuItemWithSubmenuProps, MenuType } from "../types";
+import { isSidebarOpen, isSubmenuOpen  } from "../utils/sidebarUtils";
+
+
 
 
 const MenuItemWithSubmenu:React.FC<MenuItemWithSubmenuProps> = ({ nav, index, menuType }) => {
     const { isExpanded, isMobileOpen, isHovered, openSubmenu, toggleSubmenu } = useSidebarStore();
+    const showMenu = isSidebarOpen (isExpanded, isHovered, isMobileOpen);
+    const showChevronRotated = isSubmenuOpen(openSubmenu, menuType, index);
+
 
     return   <button
               onClick={() => toggleSubmenu(index, menuType)}
               className={`menu-item group  ${
-                openSubmenu?.type === menuType && openSubmenu?.index === index
+                showChevronRotated
                   ? "menu-item-active"
                   : "menu-item-inactive"
               } cursor-pointer ${
@@ -20,7 +26,7 @@ const MenuItemWithSubmenu:React.FC<MenuItemWithSubmenuProps> = ({ nav, index, me
             >
               <span
                 className={` ${
-                  openSubmenu?.type === menuType && openSubmenu?.index === index
+                  showChevronRotated
                     ? "menu-item-icon-active"
                     : "menu-item-icon-inactive"
                 }`}
@@ -28,14 +34,12 @@ const MenuItemWithSubmenu:React.FC<MenuItemWithSubmenuProps> = ({ nav, index, me
                 {nav.icon}
               </span>
               
-              {(isExpanded || isHovered || isMobileOpen) && (
+              {(showMenu) && (
                 <span className={`menu-item-text`}>{nav.name}</span>
               )}
-              {(isExpanded || isHovered || isMobileOpen) && (
+              {(showMenu) && (
                 <ChevronDownIcon
-                  className={`ml-auto w-5 h-5 transition-transform duration-200  ${
-                    openSubmenu?.type === menuType &&
-                    openSubmenu?.index === index
+                  className={`ml-auto w-5 h-5 transition-transform duration-200  ${showChevronRotated
                       ? "rotate-180 text-brand-500"
                       : ""
                   }`}

@@ -1,9 +1,12 @@
 import { useSidebarStore } from "@/layout/sideBar/hooks/useSidebarStore";
 import Image from "next/image";
 import Link from "next/link";
+import { isSidebarOpen } from "../utils/sidebarUtils";
+
 
 const SidebarLogo = () => {
     const { isExpanded, isMobileOpen, isHovered } = useSidebarStore();
+    const showMenu = isSidebarOpen(isExpanded, isHovered, isMobileOpen);
 
     return <div
         className={`py-8 flex  ${
@@ -11,7 +14,7 @@ const SidebarLogo = () => {
         }`}
       >
         <Link href="/">
-          {isExpanded || isHovered || isMobileOpen ? (
+          {showMenu ? (
             <>
               <Image
                 className="dark:hidden"
