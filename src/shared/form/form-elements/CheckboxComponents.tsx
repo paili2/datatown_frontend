@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Checkbox from "../input/Checkbox";
+import Checkbox from "@/shared/form/input/Checkbox";
 import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
 
 export default function CheckboxComponents() {

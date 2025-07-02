@@ -5,10 +5,11 @@ import {
   TableCell,
   TableHeader,
   TableRow,
-} from "../../shared/ui/table";
+} from "@/shared/ui/table";
 
-import Badge from "../../shared/ui/badge/Badge";
+import Badge from "@/shared/ui/badge/Badge";
 import Image from "next/image";
+import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
 
 interface Order {
   id: number;

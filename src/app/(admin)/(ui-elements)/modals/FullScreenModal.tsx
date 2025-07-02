@@ -1,9 +1,10 @@
 "use client";
-import { useModal } from "@/hooks/useModal";
-import ComponentCard from "../../common/ComponentCard";
 
-import Button from "../../ui/button/Button";
-import { Modal } from "../../ui/modal";
+import { useModal } from "@/shared/hooks/useModal";
+import Button from "@/shared/ui/button/Button";
+import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
+import { Modal } from "@/shared/ui/modal";
+
 
 export default function FullScreenModal() {
   const {

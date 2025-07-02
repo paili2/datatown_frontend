@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
-import Label from "../Label";
-import Select from "../Select";
-import MultiSelect from "../MultiSelect";
+import Label from "@/shared/form/Label";
+import Select from "@/shared/form/Select";
+import MultiSelect from "@/shared/form/MultiSelect";
 import { ChevronDownIcon } from "@/shared/icons";
 
 export default function SelectInputs() {

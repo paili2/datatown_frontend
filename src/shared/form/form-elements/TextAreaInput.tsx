@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
-import TextArea from "../input/TextArea";
-import Label from "../Label";
+import TextArea from "@/shared/form/input/TextArea";
+import Label from "@/shared/form/Label";
 
 export default function TextAreaInput() {
   const [message, setMessage] = useState("");

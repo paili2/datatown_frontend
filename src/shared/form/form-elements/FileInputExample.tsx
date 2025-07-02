@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import FileInput from "../input/FileInput";
-import Label from "../Label";
+import FileInput from "@/shared/form/input/FileInput";
+import Label from "@/shared/form/Label";
 import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
 
 export default function FileInputExample() {

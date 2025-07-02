@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from 'react';
-import Label from '../Label';
-import Input from '../input/InputField';
-import Select from '../Select';
-import { ChevronDownIcon, EyeCloseIcon, EyeIcon, TimeIcon } from '../../icons';
+import { ChevronDownIcon, EyeCloseIcon, EyeIcon, TimeIcon } from '@/shared/icons';
+import Label from "@/shared/form/Label";
+import Input from "@/shared/form/input/InputField";
+import Select from '@/shared/form/Select';
 import DatePicker from '@/shared/form/date-picker';
 import ComponentCard from '@/shared/ui/componentcard/ComponentCard';
 

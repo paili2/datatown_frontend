@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
-import Input from "../input/InputField";
-import Label from "../Label";
+import Input from "@/shared/form/input/InputField";
+import Label from "@/shared/form/Label";
 
 export default function InputStates() {
   const [email, setEmail] = useState("");

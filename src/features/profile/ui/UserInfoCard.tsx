@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { useModal } from "../../../shared/hooks/useModal";
-import { Modal } from "../../../shared/ui/modal";
-import Button from "../../../shared/ui/button/Button";
-import Input from "../../../shared/form/input/InputField";
-import Label from "../../../shared/form/Label";
+import { useModal } from "@/shared/hooks/useModal";
+import { Modal } from "@/shared/ui/modal";
+import Button from "@/shared/ui/button/Button";
+import Input from "@/shared/form/input/InputField";
+import Label from "@/shared/form/Label";
 
 export default function UserInfoCard() {
   const { isOpen, openModal, closeModal } = useModal();
