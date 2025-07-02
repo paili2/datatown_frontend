@@ -4,9 +4,6 @@ import { SidebarMenuProps } from "../types";
 import { useSidebarStore } from "../hooks/useSidebarStore";
 import { isSidebarOpen, isSubmenuOpen  } from "../utils/sidebarUtils";
 
-
-
-
 const RenderMenuItems = ({navItems,
     menuType, subMenuHeight, subMenuRefs, isActive}:SidebarMenuProps) => {
     const { isExpanded, isMobileOpen, isHovered, openSubmenu } = useSidebarStore();
