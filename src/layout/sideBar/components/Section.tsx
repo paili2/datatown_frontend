@@ -1,12 +1,14 @@
 import { HorizontaLDots } from "@/icons";
 import RenderMenuItems from "./RenderMenuItems";
 import { SidebarMenuProps, SidebarSectionProps } from "../types";
-import { useSidebarStore } from "../hooks/UseSidebarStore";
+import { useSidebarStore } from "../hooks/useSidebarStore";
+import { isSidebarOpen } from "../utils/sidebarUtils";
 
 
 
 const Section = ({navItems,menuType,title,subMenuRefs ,subMenuHeight, isActive, handleSubmenuToggle}:SidebarMenuProps&SidebarSectionProps) => {
     const {isExpanded, isHovered, isMobileOpen} = useSidebarStore();
+    const showMenu = isSidebarOpen(isExpanded, isHovered, isMobileOpen);
 
     return (<div>
               <h2
@@ -16,7 +18,7 @@ const Section = ({navItems,menuType,title,subMenuRefs ,subMenuHeight, isActive, 
                     : "justify-start"
                 }`}
               >
-                {isExpanded || isHovered || isMobileOpen ? (
+                {showMenu ? (
                   title
                 ) : (
                   <HorizontaLDots />

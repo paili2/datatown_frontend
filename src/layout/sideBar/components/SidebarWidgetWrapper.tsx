@@ -1,5 +1,5 @@
 
-import { useSidebarStore } from "../hooks/UseSidebarStore";
+import { useSidebarStore } from "../hooks/useSidebarStore";
 import SidebarWidget from "../widgets/SidebarWidget";
 
 

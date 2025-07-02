@@ -1,16 +1,27 @@
 import Link from "next/link";
 import MenuItemWithSubmenu from "./MenuItemWithSubmenu";
 import { SidebarMenuProps } from "../types";
-import { useSidebarStore } from "../hooks/UseSidebarStore";
+import { useSidebarStore } from "../hooks/useSidebarStore";
+import { isSidebarOpen, isSubmenuOpen  } from "../utils/sidebarUtils";
+
 
 
 const RenderMenuItems = ({navItems,
     menuType, subMenuHeight, subMenuRefs, isActive}:SidebarMenuProps) => {
     const { isExpanded, isMobileOpen, isHovered, openSubmenu } = useSidebarStore();
+     const showMenu = isSidebarOpen (isExpanded, isHovered, isMobileOpen);
+ 
+
     return  (
     <ul className="flex flex-col gap-4">
-      {navItems.map((nav, index) => (
-        <li key={nav.name}>
+      {navItems.map((nav, index) => {
+
+      const isOpen = isSubmenuOpen(openSubmenu, menuType, index);
+      const height = isOpen
+    ? `${subMenuHeight[`${menuType}-${index}`]}px`
+    : '0px';        
+
+        return <li key={nav.name}>
           {nav.subItems ? (
           <MenuItemWithSubmenu nav={nav} index={index} menuType={menuType} />
           ) : (
@@ -30,25 +41,20 @@ const RenderMenuItems = ({navItems,
                 >
                   {nav.icon}
                 </span>
-                {(isExpanded || isHovered || isMobileOpen) && (
+                {(showMenu) && (
                   <span className={`menu-item-text`}>{nav.name}</span>
                 )}
               </Link>
             ) 
           )}
 
-          {nav.subItems && (isExpanded || isHovered || isMobileOpen) && (
+          {nav.subItems && (showMenu) && (
             <div
               ref={(el) => {
                 subMenuRefs.current[`${menuType}-${index}`] = el;
               }}
               className="overflow-hidden transition-all duration-300"
-              style={{
-                height:
-                  openSubmenu?.type === menuType && openSubmenu?.index === index
-                    ? `${subMenuHeight[`${menuType}-${index}`]}px`
-                    : "0px",
-              }}
+              style={{ height }}
 
             >
               <ul className="mt-2 space-y-1 ml-9">
@@ -94,7 +100,7 @@ const RenderMenuItems = ({navItems,
             </div>
           )}
         </li>
-      ))}
+    })}
     </ul>
   );;
 }

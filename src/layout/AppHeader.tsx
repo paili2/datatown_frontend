@@ -5,7 +5,8 @@ import UserDropdown from "@/components/header/UserDropdown";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState ,useEffect,useRef} from "react";
-import { useSidebarStore } from "./sideBar/hooks/UseSidebarStore";
+import { useSidebarStore } from "./sideBar/hooks/useSidebarStore";
+
 
 
 const AppHeader: React.FC = () => {

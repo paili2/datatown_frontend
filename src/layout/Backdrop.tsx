@@ -1,5 +1,6 @@
 import React from "react";
-import { useSidebarStore } from "./sideBar/hooks/UseSidebarStore";
+import { useSidebarStore } from "./sideBar/hooks/useSidebarStore";
+
 
 
 const Backdrop: React.FC = () => {
