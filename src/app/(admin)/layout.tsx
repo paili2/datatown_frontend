@@ -1,10 +1,10 @@
 "use client";
 
-import AppHeader from "@/widgets/layout/AppHeader";
-import Backdrop from "@/widgets/layout/Backdrop";
-import AppSidebar from "@/widgets/layout/sideBar/AppSidebar";
-import { useSidebarStore } from "@/widgets/layout/sideBar/hooks/useSidebarStore";
-import { isDesktopSidebarOpen } from "@/widgets/layout/sideBar/utils/sidebarUtils";
+import AppHeader from "@/widgets/AppHeader";
+import Backdrop from "@/widgets/Backdrop";
+import AppSidebar from "@/widgets/sideBar/AppSidebar";
+import { useSidebarStore } from "@/widgets/sideBar/hooks/useSidebarStore";
+import { isDesktopSidebarOpen } from "@/widgets/sideBar/utils/sidebarUtils";
 import React from "react";
 
 export default function AdminLayout({

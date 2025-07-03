@@ -2,7 +2,7 @@
 import React from "react";
 import { useModal } from "@/shared/hooks/useModal";
 import Button from "@/shared/ui/button/Button";
-import { Modal } from "@/shared/ui/modal";
+import { Modal } from "@/shared/ui/modal/ModalIndex";
 import Input from "@/shared/form/input/InputField";
 import Label from "@/shared/form/Label";
 

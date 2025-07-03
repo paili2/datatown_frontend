@@ -1,7 +1,7 @@
 "use client";
 import { useModal } from "@/shared/hooks/useModal";
 import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
-import { Modal } from "@/shared/ui/modal";
+import { Modal } from "@/shared/ui/modal/ModalIndex";
 import React from "react";
 
 export default function ModalBasedAlerts() {

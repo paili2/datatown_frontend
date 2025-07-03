@@ -4,7 +4,7 @@ import Label from "@/shared/form/Label";
 import { useModal } from "@/shared/hooks/useModal";
 import Button from "@/shared/ui/button/Button";
 import ComponentCard from "@/shared/ui/componentcard/ComponentCard";
-import { Modal } from "@/shared/ui/modal";
+import { Modal } from "@/shared/ui/modal/ModalIndex";
 import React from "react";
 
 export default function FormInModal() {

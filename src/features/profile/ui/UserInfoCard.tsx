@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useModal } from "@/shared/hooks/useModal";
-import { Modal } from "@/shared/ui/modal";
+import { Modal } from "@/shared/ui/modal/ModalIndex";
 import Button from "@/shared/ui/button/Button";
 import Input from "@/shared/form/input/InputField";
 import Label from "@/shared/form/Label";
