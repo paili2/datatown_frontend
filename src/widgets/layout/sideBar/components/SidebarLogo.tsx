@@ -1,45 +1,32 @@
 import { useSidebarStore } from "../hooks/useSidebarStore";
 import Image from "next/image";
 import Link from "next/link";
-import { getSidebarJustifyClass, isSidebarOpen } from "../utils/sidebarUtils";
+import { getSidebarJustifyClass, isDesktopSidebarOpen, isSidebarOpen } from "../utils/sidebarUtils";
+import { sidebarLogos } from "../data/sidebarLogoData";
 
 
 const SidebarLogo = () => {
     const { isExpanded, isMobileOpen, isHovered } = useSidebarStore();
-    const showMenu = isSidebarOpen(isExpanded, isHovered, isMobileOpen);
+    const desktopOpen = isDesktopSidebarOpen(isExpanded, isHovered);
+    const sidebarOpen  = isSidebarOpen(desktopOpen, isMobileOpen);
     const justifyClass = getSidebarJustifyClass(isExpanded, isHovered);
-
-    return <div
-        className={`py-8 flex  ${justifyClass}`}
-      >
-        <Link href="/">
-          {showMenu ? (
-            <>
-              <Image
-                className="dark:hidden"
-                src="/images/logo/logo.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              />
-              <Image
-                className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              />
-            </>
-          ) : (
-            <Image
-              src="/images/logo/logo-icon.svg"
-              alt="Logo"
-              width={32}
-              height={32}
-            />
-          )}
-        </Link>
-      </div>;
+    const logos = sidebarOpen ? sidebarLogos.open : sidebarLogos.closed;
+    
+    return(
+      <div className={`py-8 flex  ${justifyClass}`}>
+          <Link href="/">
+           {logos.map(({ src, className, width, height }) => (
+          <Image
+            key={src}
+            src={src}
+            alt="Logo"
+            width={width}
+            height={height}
+            className={className}
+          />
+        ))}
+          </Link>
+        </div>)
 }
  
 export default SidebarLogo;

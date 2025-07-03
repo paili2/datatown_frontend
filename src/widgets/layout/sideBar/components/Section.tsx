@@ -1,13 +1,14 @@
 
 import RenderMenuItems from "./RenderMenuItems";
 import { SidebarMenuListProps, SectionProps } from "../types";
-import { getSidebarJustifyClass, isSidebarOpen } from "../utils/sidebarUtils";
+import { getSidebarJustifyClass, isDesktopSidebarOpen, isSidebarOpen } from "../utils/sidebarUtils";
 import { HorizontaLDots } from "@/shared/icons";
 import { useSidebarStore } from "../hooks/useSidebarStore";
 
 const Section = ({navItems,menuType,title,subMenuRefs ,subMenuHeight, isActive, handleSubmenuToggle}:SidebarMenuListProps&SectionProps) => {
     const {isExpanded, isHovered, isMobileOpen} = useSidebarStore();
-    const showMenu = isSidebarOpen(isExpanded, isHovered, isMobileOpen);
+    const desktopOpen = isDesktopSidebarOpen(isExpanded, isHovered);
+    const sidebarOpen  = isSidebarOpen(desktopOpen, isMobileOpen);
     const justifyClass = getSidebarJustifyClass(isExpanded, isHovered);
 
 
@@ -15,7 +16,7 @@ const Section = ({navItems,menuType,title,subMenuRefs ,subMenuHeight, isActive, 
               <h2
                 className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${ justifyClass }`}
               >
-                {showMenu ? title: <HorizontaLDots />}
+                {sidebarOpen ? title: <HorizontaLDots />}
               </h2>
               <RenderMenuItems subMenuHeight={subMenuHeight}  isActive={isActive} subMenuRefs={subMenuRefs} handleSubmenuToggle={handleSubmenuToggle} navItems={navItems} menuType={menuType}></RenderMenuItems>
             </div>);

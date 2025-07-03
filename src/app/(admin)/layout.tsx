@@ -1,10 +1,10 @@
 "use client";
 
-// import { useSidebar } from "@/context/SidebarContext";
 import AppHeader from "@/widgets/layout/AppHeader";
 import Backdrop from "@/widgets/layout/Backdrop";
 import AppSidebar from "@/widgets/layout/sideBar/AppSidebar";
 import { useSidebarStore } from "@/widgets/layout/sideBar/hooks/useSidebarStore";
+import { isDesktopSidebarOpen } from "@/widgets/layout/sideBar/utils/sidebarUtils";
 import React from "react";
 
 export default function AdminLayout({
@@ -12,15 +12,11 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const { isExpanded, isHovered, isMobileOpen } = useSidebar();
   const { isExpanded, isMobileOpen, isHovered } = useSidebarStore();
+  const desktopOpen = isDesktopSidebarOpen(isExpanded, isHovered);
 
   // Dynamic class for main content margin based on sidebar state
-  const mainContentMargin = isMobileOpen
-    ? "ml-0"
-    : isExpanded || isHovered
-    ? "lg:ml-[290px]"
-    : "lg:ml-[90px]";
+  const mainContentMargin = isMobileOpen ? "ml-0": desktopOpen ? "lg:ml-[290px]" : "lg:ml-[90px]";
 
   return (
     <div className="min-h-screen xl:flex">

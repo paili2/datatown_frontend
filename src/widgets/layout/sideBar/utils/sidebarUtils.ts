@@ -1,8 +1,12 @@
 export const isSidebarOpen = (
+  isDesktopSidebarOpen: boolean,
+  isMobileSidebarOpen: boolean
+): boolean => isDesktopSidebarOpen || isMobileSidebarOpen;
+
+export const isDesktopSidebarOpen = (
   isExpanded: boolean,
-  isHovered: boolean,
-  isMobileOpen: boolean
-): boolean => isExpanded || isHovered || isMobileOpen;
+  isHovered: boolean
+): boolean => isExpanded || isHovered;
 
 export const isSubmenuOpen = (
   openSubmenu: { type: string; index: number } | null | undefined,

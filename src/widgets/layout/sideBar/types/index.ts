@@ -1,4 +1,17 @@
-import { NavItem } from "../data/navData";
+export type NavSubItem = {
+  name: string;
+  path: string;        
+  pro?: boolean;
+  new?: boolean;
+};
+
+export type NavItem = {
+  name: string;
+  icon: React.ReactNode;
+  path?: string;
+  subItems?: { name: string; path: string; pro?: boolean; new?: boolean }[];
+};
+
 
 
 export interface SidebarMenuBaseProps {
@@ -38,4 +51,17 @@ export interface MenuItemWithSubmenuProps {
   index: number;                   
   menuType: MenuType
 };
+
+export interface MenuDropdownItemProps {
+  name: string;
+  path: string;
+  isActive: (path: string) => boolean;
+  isNew?: boolean;
+  isPro?: boolean;
+}
+
+export interface BadgeProps {
+  label: "new" | "pro";
+  active: boolean;
+}
 

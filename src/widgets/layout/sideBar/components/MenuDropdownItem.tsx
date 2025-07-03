@@ -1,48 +1,28 @@
 import Link from "next/link";
+
+import Badge from "./Badge";
+import { getBadgeList } from "../utils/getBadgeList";
 import { MenuDropdownItemProps } from "../types";
 
-const MenuDropdownItem = ({
-  name,
+
+const MenuDropdownItem: React.FC<MenuDropdownItemProps> = ({  name,
   path,
   isActive,
   isNew = false,
-  isPro = false,
-}: MenuDropdownItemProps) => {
+  isPro = false, }) => {
     const active = isActive(path);
-
+  const badges = getBadgeList(isNew, isPro).filter(b => b.flag);
+    
     return  (
     <li>
         <Link
             href={path}
-            className={`menu-dropdown-item ${
-            active ? "menu-dropdown-item-active" : "menu-dropdown-item-inactive"
-            }`}
-        >
+            className={`menu-dropdown-item
+                ${active ? "menu-dropdown-item-active" : "menu-dropdown-item-inactive"}`}>
             {name}
-            <span className="flex items-center gap-1 ml-auto">
-            {isNew && (
-                <span
-                className={`menu-dropdown-badge ml-auto ${
-                    active
-                    ? "menu-dropdown-badge-active"
-                    : "menu-dropdown-badge-inactive"
-                }`}
-                >
-                new
-                </span>
-            )}
-            {isPro && (
-                <span
-                className={`menu-dropdown-badge ml-auto ${
-                    active
-                    ? "menu-dropdown-badge-active"
-                    : "menu-dropdown-badge-inactive"
-                }`}
-                >
-                pro
-                </span>
-            )}
-            </span>
+            <div className="flex items-center gap-1 ml-auto">
+          {badges.map(b => b.flag ? <Badge key={b.label} label={b.label} active={active} /> : null)}
+        </div>
         </Link>
     </li>)
 }

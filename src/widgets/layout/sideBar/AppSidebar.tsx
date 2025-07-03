@@ -4,9 +4,12 @@ import { usePathname } from "next/navigation";
 import { useSidebarStore } from "./hooks/useSidebarStore";
 import SidebarLogo from "./components/SidebarLogo";
 import SidebarWidgetWrapper from "./components/SidebarWidgetWrapper";
-import { menuItems, othersItems, sidebarConfig } from "./data/navData";
+
 import Section from "./components/Section";
 import { useSidebarClasses } from "./styles/styles";
+import { menuItems } from "./data/menuItems";
+import { othersItems } from "./data/othersItems";
+import { sidebarConfig } from "./data/sidebarConfig";
 
 
 
